@@ -1,0 +1,29 @@
+<h1>Borrower Page</h2>
+<h2>Welcome <%=@borrower.first_name%> <%=@borrower.last_name%></h2>
+<h2>How Much Needed: $<%= @borrower.money %></h2>
+<h2>How Much Raised: $<%= @borrower.raised %></h2>
+<form action='/logout' name='logout'>
+	<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token%>'>
+<button  type='submit'>Log Out</button>
+</form>
+<h1>List of people who lent you money:</h1>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Amount Lent</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% if @lenders %>
+			<% @lenders.each do |i|%>
+			<tr>
+				<td><%= i.first_name%> <%=i.last_name%></td>
+				<td><%= i.email %></td>
+				<td><%= i.amount %></td>
+			</tr>
+			<%end%>
+		<%end%>
+	</tbody>
+</table>

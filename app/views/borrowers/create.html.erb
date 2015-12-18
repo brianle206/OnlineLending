@@ -1,0 +1,8 @@
+<h1>Borrower Page</h2>
+<h2>Welcome <%=@borrower.first_name%> <%=@borrower.last_name%></h2>
+<h2>How Much Needed: <%= @borrower.money %></h2>
+<h2>How Much Raised: <%= @borrower.raised %></h2>
+<form action='/logout' name='logout'>
+	<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token%>'>
+<button  type='submit'>Log Out</button>
+</form>

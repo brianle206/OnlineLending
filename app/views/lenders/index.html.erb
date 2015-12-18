@@ -1,0 +1,64 @@
+<h1>Lender Page</h1>
+<h2>Welcome <%=@user.first_name%> <%=@user.last_name%></h2>
+<h2>Account Balance: <%= @user.money %></h2>
+<form action='/logout' name='logout'>
+	<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token%>'>
+<button  type='submit'>Log Out</button>
+</form>
+<h1>List of people in need of help:</h1>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Need Money For</th>
+		<th>Reason for Loan</th>
+		<th>Amount Needed</th>
+		<th>Amount Raised</th>
+		<th>Action</th>
+	</tr>
+	<% @borrower.each do |i| %>
+	<tr>
+		<td><%=i.first_name%> <%=i.last_name%></td>
+		<td><%=i.purpose %></td>
+		<td><%=i.description%></td>
+		<td><%=i.money%></td>
+		<td><%=i.raised%></td>
+		<td> 
+			<% if @user.money > 0%>
+			<form action="/lend/<%=i.id%>/<%=@user.id%>">
+				<select name='lend'>
+					<option value='25'>$25</option>
+					<option value='50'>$50</option>
+					<option value='75'>$75</option>
+					<option value='100'>$100</option>
+				</select>
+				<button>Lend</button>
+			</form>
+			<%end%>
+		</td>
+	</tr>
+	<%end%>
+</table>
+<h1>List of People you lent money to:</h1>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Need Money For</th>
+		<th>Reason for Loan</th>
+		<th>Amount Needed</th>
+		<th>Amount Raised</th>
+		<th>Amount Lent</th>
+	</tr>
+	<% if @lent %>
+		<% @lent.each do |x| %>
+		<tr>
+			<td><%=x.first_name%> <%=x.last_name%></td>
+			<td><%=x.purpose%></td>
+			<td><%=x.description%></td>
+			<td><%=x.money%></td>
+			<td><%=x.raised%></td>
+			<td><%=x.amount%></td>
+		</tr>
+		<%end%>
+	<%end%>
+
+</table>

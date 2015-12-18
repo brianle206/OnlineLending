@@ -1,0 +1,62 @@
+<h1>Welcome to the Online Premiere Lending Site</h1>
+<% if flash[:errors] %>
+<% flash[:errors].each do |i| %>
+<p><%= i %></p>
+<%end%>
+<%end%>
+<div id="Lender">
+	<h1>Lender</h1>
+	<form action='/users/lender' method='post'>
+	<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token%>'>
+	First Name:<br>
+	<input type='text' name='First_name' placeholder='Joe'><br>
+	Last Name:<br>
+	<input type='text' name='Last_name' placeholder='Black'><br>
+	Email:<br>
+	<input type='text' name='Email' placeholder='joe@black.com'><br>
+	Password:<br>
+	<input type='password' name='Password'><br>
+	Password Confirmation:<br>
+	<input type='password' name='Password_Confirmation'><br>
+	How Much To Lend:
+	<select name='Money'><br>
+		<option value='100'>$100</option>
+		<option value='200'>$200</option>
+		<option value='300'>$300</option>
+		<option value='400'>$400</option>
+		<option value='500'>$500</option>
+	</select><br>
+	<a href='/already'>Already have an account?</a> <input type='submit' value='Register'>
+</form>
+</div>
+
+<div id="Borrower">
+	<h1>Borrower</h1>
+	<form action='/users/borrower' method='post'>
+	<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token%>'>
+	First Name:<br>
+	<input type='text' name='First_name' placeholder='Joe'><br>
+	Last Name:<br>
+	<input type='text' name='Last_name' placeholder='Black'><br>
+	Email:<br>
+	<input type='text' name='Email' placeholder='joe@black.com'><br>
+	Password:<br>
+	<input type='password' name='Password'><br>
+	Password Confirmation:<br>
+	<input type='password' name='Password_Confirmation'><br>
+	Need Money For:<br>
+	<input type='text' name='Reason'><br>
+	Description:<br>
+	<textarea name='Description'></textarea><br>
+	Amount Needed:
+	<select name='Money'>
+		<option value='100'>$100</option>
+		<option value='200'>$200</option>
+		<option value='300'>$300</option>
+		<option value='400'>$400</option>
+		<option value='500'>$500</option>
+	</select><br>
+	<a href='/already'>Already have an account?</a> <input type='submit' value='Register'>
+</form>
+</div>
+

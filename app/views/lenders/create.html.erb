@@ -1,0 +1,7 @@
+<h1>Lender Page</h1>
+<h2>Welcome <%=@user.first_name%> <%=@user.last_name%></h2>
+<h2>Account Balance: <%= @user.money %></h2>
+<form action='/logout' name='logout'>
+	<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token%>'>
+<button  type='submit'>Log Out</button>
+</form>

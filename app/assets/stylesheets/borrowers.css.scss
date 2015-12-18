@@ -1,0 +1,19 @@
+// Place all the styles related to the Borrowers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+table, td,th{
+	text-align: center;
+	border: 1px solid black;
+}
+div {
+	display: inline-block;
+	margin: 10px;
+}
+#Lender {
+	vertical-align: top;
+}
+body {
+    width: 970px;
+    align-content: center;
+    margin: auto;
+}
