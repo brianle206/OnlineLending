@@ -1,62 +1,107 @@
-<h1>Welcome to the Online Premiere Lending Site</h1>
-<% if flash[:errors] %>
-<% flash[:errors].each do |i| %>
-<p><%= i %></p>
-<%end%>
-<%end%>
-<div id="Lender">
-	<h1>Lender</h1>
-	<form action='/users/lender' method='post'>
-	<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token%>'>
-	First Name:<br>
-	<input type='text' name='First_name' placeholder='Joe'><br>
-	Last Name:<br>
-	<input type='text' name='Last_name' placeholder='Black'><br>
-	Email:<br>
-	<input type='text' name='Email' placeholder='joe@black.com'><br>
-	Password:<br>
-	<input type='password' name='Password'><br>
-	Password Confirmation:<br>
-	<input type='password' name='Password_Confirmation'><br>
-	How Much To Lend:
-	<select name='Money'><br>
-		<option value='100'>$100</option>
-		<option value='200'>$200</option>
-		<option value='300'>$300</option>
-		<option value='400'>$400</option>
-		<option value='500'>$500</option>
-	</select><br>
-	<a href='/already'>Already have an account?</a> <input type='submit' value='Register'>
-</form>
-</div>
+<!-- SERVICES -->
+	<section id="services">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-title">
+						<h1>Services</h1>
+						<span class="st-border"></span>
+					</div>
+				</div>
 
-<div id="Borrower">
-	<h1>Borrower</h1>
-	<form action='/users/borrower' method='post'>
-	<input type='hidden' name='authenticity_token' value='<%= form_authenticity_token%>'>
-	First Name:<br>
-	<input type='text' name='First_name' placeholder='Joe'><br>
-	Last Name:<br>
-	<input type='text' name='Last_name' placeholder='Black'><br>
-	Email:<br>
-	<input type='text' name='Email' placeholder='joe@black.com'><br>
-	Password:<br>
-	<input type='password' name='Password'><br>
-	Password Confirmation:<br>
-	<input type='password' name='Password_Confirmation'><br>
-	Need Money For:<br>
-	<input type='text' name='Reason'><br>
-	Description:<br>
-	<textarea name='Description'></textarea><br>
-	Amount Needed:
-	<select name='Money'>
-		<option value='100'>$100</option>
-		<option value='200'>$200</option>
-		<option value='300'>$300</option>
-		<option value='400'>$400</option>
-		<option value='500'>$500</option>
-	</select><br>
-	<a href='/already'>Already have an account?</a> <input type='submit' value='Register'>
-</form>
-</div>
+				<div class="col-md-4 col-sm-6 st-service">
+					<h2><i class="fa fa-desktop"></i>State of the art P2P Lending</h2>
+					<p>Here at OnlineLending Premire we strive our best to provide customers service!</p>
+				</div>
 
+				<div class="col-md-4 col-sm-6 st-service">
+					<h2><i class="fa fa-cogs"></i>0% Interest!</h2>
+					<p>Borrow money free of interest! and ZERO fees!</p>
+				</div>
+
+				<div class="col-md-4 col-sm-6 st-service">
+					<h2><i class="fa fa-code"></i>Get Money for your needs</h2>
+					<p>Whether it be for medical bills or just for your lesuires its all for you!</p>
+				</div>
+
+				<div class="col-md-4 col-sm-6 st-service">
+					<h2><i class="fa fa-dashboard"></i>Super Fast Transfers!</h2>
+					<p>Once you have reached your desired goals you'll be transferred the funds instantaneously!</p>
+				</div>
+
+				<div class="col-md-4 col-sm-6 st-service">
+					<h2><i class="fa fa-life-ring"></i>Friendly Support</h2>
+					<p>24/7 hour support when you need!</p>
+				</div>
+
+				<div class="col-md-4 col-sm-6 st-service">
+					<h2><i class="fa fa-weixin"></i>Live Chat!</h2>
+					<p>Talk to an agent today to get started!</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /SERVICES -->
+	<!-- PRICING -->
+	<section id="pricing">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-title">
+						<h1>Pricing</h1>
+						<span class="st-border"></span>
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="st-pricing text-center">
+						<h5>Become a Lender</h5>
+						<h3>$0</h3>
+						<div class="st-border"></div>
+						<ul>
+							<li>Lend People Money</li>
+							<li>The power is yours</li>
+							<li>Lend to who you want</li>
+							<li>when you want</li>
+							<li>Free to join</li>
+						</ul>
+						<a href="/login/lender" class="btn btn-send">Sign Up</a>
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="st-pricing text-center">
+						<h5>Become a Borrower!</h5>
+						<h3>$0</h3>
+						<div class="st-border"></div>
+						<ul>
+							<li>Borrow money from people</li>
+							<li>Tell people what you need</li>
+							<li>See who lends you money</li>
+							<li>Get money now!</li>
+							<li>Free to joins!</li>
+						</ul>
+						<a href="/login/borrower" class="btn btn-send">Sign Up</a>
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="st-pricing text-center">
+						<h5>Something</h5>
+						<h3>$209</h3>
+						<div class="st-border"></div>
+						<ul>
+							<li>Free Download</li>
+							<li>1000+ Softwear</li>
+							<li>Full Access</li>
+							<li>Free Update</li>
+							<li>Live Support</li>
+						</ul>
+						<a href="" class="btn btn-send">Not Working</a>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<!-- /PRICING -->
