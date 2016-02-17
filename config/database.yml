@@ -21,7 +21,7 @@ default: &default
   database: OnlineLending
   pool: 5
   username: brianle
-  password: wolverine
+  password: 'wolverine'
 development:
   <<: *default
 
